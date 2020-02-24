@@ -9,6 +9,10 @@ package loja;
  *
  * @author 082170007
  */
-public class Funcionario {
-    
+public abstract class Funcionario {
+
+    protected String nome;
+    protected String usuario;
+    protected String senha;
+
 }

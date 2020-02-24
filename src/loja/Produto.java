@@ -12,5 +12,17 @@ package loja;
 public class Produto {
     public String descricao;
     public double preço;
+
+    private List<Produto> produtos =  new ArrayList<Produto>();
+
+    public Produto(String descricao, double preço){
+        this.descricao = descricao;
+        this.preço = preço;
+    }
+
+
     
+    public void CadastraProduto(ICadastraFuncionario func){
+        
+    }
 }

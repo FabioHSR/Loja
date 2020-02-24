@@ -24,19 +24,19 @@ public class Pedido {
     /**
      * @return the itensPedido
      */
-    public List<ItemPedido> getItensPedido() {
-        String sItensPedido = "";
+    public String getItensPedido() {
+        String sItensPedido = dataPedido;
         for(ItemPedido item : itensPedido){
             sItensPedido+= "\n"+item.produto.descricao+" x "+item.produto.preço+
                     " = "+item.quantidade*item.produto.preço;
         }
-        return itensPedido;
+        return sItensPedido;
     }
 
     /**
      * @param itensPedido the itensPedido to set
      */
-    public void setItensPedido(List<ItemPedido> itensPedido) {
-        this.itensPedido = itensPedido;
+    public void setItensPedido(ItemPedido itemPedido) {
+        this.itensPedido.add(itemPedido);
     }
 }
