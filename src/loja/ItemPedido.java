@@ -10,8 +10,16 @@ package loja;
  * @author 082170007
  */
 public class ItemPedido {
-    public Produto produto;
-    public int quantidade;
+    private Produto produto;
+    private int quantidade;
+
+    public Produto getProduto(){
+        return produto;
+    }
+
+    public int getQuantidade(){
+        return quantidade;
+    }
 
     public ItemPedido (Produto produto, int quantidade)
     {

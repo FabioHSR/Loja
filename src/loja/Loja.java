@@ -5,6 +5,11 @@
  */
 package loja;
 
+import java.nio.file.FileAlreadyExistsException;
+
+
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+
 /**
  *
  * @author 082170007
@@ -15,11 +20,7 @@ public class Loja {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        double preco = 4.3;
-        String descricao = "Item";
-        System.out.println(descricao +" x "+preco);
-               
-        // TODO code application logic here
+        Biblioteca.exibeMenu();
     }
-    
+
 }
