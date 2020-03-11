@@ -26,4 +26,8 @@ public class ItemPedido {
         this.produto = produto;
         this.quantidade = quantidade;
     }
+
+	public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+	}
 }

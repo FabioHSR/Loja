@@ -20,7 +20,18 @@ public class Loja {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Produto p1 = new Produto("Produto1", 11.3);
+        p1.incluiProduto();
+        Produto p2 = new Produto("Produto2", 21.2);
+        p2.incluiProduto();
+        Produto p3 = new Produto("Produto3", 31.4);
+        p3.incluiProduto();
+        Produto p4= new Produto("Produto4", 41.1);
+        p4.incluiProduto();
+
         Biblioteca.exibeMenu();
+        
+
     }
 
 }

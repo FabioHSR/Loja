@@ -26,11 +26,12 @@ public class Biblioteca {
 
     public static void exibeMenu(){
         Scanner s = new Scanner(System.in);
-        System.out.println("Menu:\n" + "1) Produtos\n" + "2) Clientes\n" + "3) Cadastra pedido");
-          String escolha =s.nextLine();
+        String escolha;
+        System.out.println("Menu Geral:\n" + "1) Produtos\n" + "2) Clientes\n" + "3) Cadastra pedido");
+        escolha =s.nextLine();
         while (!escolha.matches("[123]")) {
             System.out.println("Por favor, escolha um opção válida do menu.");            
-            escolha = s.nextLine();
+            escolha = s.nextLine().toString();
         }
         int opcao = Integer.parseInt(escolha);
         switch(opcao)
@@ -44,7 +45,7 @@ public class Biblioteca {
 
     public static void menuProdutos() {
         Scanner s = new Scanner(System.in);
-        System.out.println("Menu:\n1) Cadastro de Produto\n2) Listar produtos\n3) Atualizar produto\n4) Sair");
+        System.out.println("Menu Produtos:\n1) Cadastro de Produto\n2) Listar produtos\n3) Atualizar produto\n4) Sair");
         String escolha =s.nextLine();
         while (!escolha.matches("[1234]")) {
             System.out.println("Por favor, escolha um opção válida do menu.");            
@@ -63,7 +64,7 @@ public class Biblioteca {
     
     private static void menuClientes() {
         Scanner s = new Scanner(System.in);
-        System.out.println("Menu:\n1) Cadastro de clientes\n2) Listar clientes\n3) Atualizar cliente\n4) Sair" );
+        System.out.println("Menu Clientes:\n1) Cadastro de clientes\n2) Listar clientes\n3) Atualizar cliente\n4) Sair" );
         String escolha =s.nextLine();
         while (!escolha.matches("[1234]")) {
             System.out.println("Por favor, escolha um opção válida do menu.");            
@@ -76,15 +77,16 @@ public class Biblioteca {
             case 2: Cliente.listaClientes(); break;
             case 3: Cliente.alteraCliente(); break;
             case 4: return;
-        }
+        }        
         menuClientes();
     }
 
     private static void menuPedido() {
         Scanner s = new Scanner(System.in);
-        System.out.println("Menu:\n1) Novo pedido\n2) Imprime pedido\n3) Sair" );
-        String escolha =s.nextLine();
-        while (!escolha.matches("[1234]")) {
+        String escolha;
+        System.out.println("Menu Pedidos:\n1) Novo pedido\n2) Sair" );
+        escolha =s.nextLine();
+        while (!escolha.matches("[12]")) {
             System.out.println("Por favor, escolha um opção válida do menu.");            
             escolha = s.nextLine();
         }
@@ -92,11 +94,9 @@ public class Biblioteca {
         switch(opcao)
         {
             case 1: Pedido.novoPedido(); break;
-            case 2: Cliente.listaClientes(); break;
-            case 3: Cliente.alteraCliente(); break;
-            case 4: return;
-        }
-        menuClientes();
+            case 2: return;
+        }        
+        menuPedido();
     }
 
 }
