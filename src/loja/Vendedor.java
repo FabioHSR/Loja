@@ -12,7 +12,7 @@ package loja;
 public class Vendedor extends Funcionario {
     
     public Vendedor(String nome, String usuario, String senha) {
-        super(nome, usuario, senha);
+        super(nome, usuario, senha,Cargo.VENDEDOR);
     }
     
 }
