@@ -9,6 +9,10 @@ package loja;
  *
  * @author 082170007
  */
-public class Vendedor {
+public class Vendedor extends Funcionario {
+    
+    public Vendedor(String nome, String usuario, String senha) {
+        super(nome, usuario, senha);
+    }
     
 }

@@ -98,7 +98,7 @@ public class Produto {
         }
         System.out.println("Digite o preço ou 0 para cancelar.");
         String preço = s.nextLine();
-        while (!Biblioteca.isParsableDouble(preço) && preço != "0") {
+        while (!Menus.isParsableDouble(preço) && preço != "0") {
             System.out.println("Por favor, digite um valor válido ou 0 para cancelar.");
             preço = s.nextLine();
         }
@@ -107,7 +107,7 @@ public class Produto {
             return p;
         } else {
             System.out.println("Operação cancelada pelo operador.");
-            Biblioteca.exibeMenu();
+            Menus.exibeMenu();
             return null;
         }
     }
