@@ -1,0 +1,2 @@
+Testei basicamente em visual code 1.43, mas deve rodar no netbeans
+Desculpe os commits atrasados, espero que considere.

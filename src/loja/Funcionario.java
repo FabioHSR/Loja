@@ -83,7 +83,7 @@ public abstract class Funcionario {
         atualizaTXT();
     }
 
-    private void atualizaTXT() {
+    private static void atualizaTXT() {
         FuncionarioDAO DAO = new FuncionarioDAO();
         DAO.writeFile(funcionariosToCSV());
     }

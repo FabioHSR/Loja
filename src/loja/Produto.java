@@ -44,7 +44,7 @@ public class Produto {
         tamanho = produtos.size();
         atualizaTXT();
     }
-    private void atualizaTXT() {
+    private static void atualizaTXT() {
         ProdutoDAO DAO = new ProdutoDAO();
         DAO.writeFile(produtosToCSV());
     }
@@ -76,6 +76,7 @@ public class Produto {
             if (p != null) {
                 produtos.set(Integer.parseInt(escolha) - 1, p);
                 System.out.println("Produto alterado com sucesso.");
+                atualizaTXT();
             }
         } else {
             System.out.println("Sem produtos para cadastrados.");

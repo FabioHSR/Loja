@@ -21,7 +21,7 @@ public class Cliente {
         atualizaTXT();
     }
 
-    private void atualizaTXT() {
+    private static void atualizaTXT() {
         ClienteDAO DAO = new ClienteDAO();
         DAO.writeFile(clientesToCSV());
     }
@@ -53,6 +53,7 @@ public class Cliente {
             if (p != null) {
                 clientes.set(Integer.parseInt(escolha)-1, p);
                 System.out.println("Cliente alterado com sucesso.");
+                atualizaTXT();
             }
         }
         else{
