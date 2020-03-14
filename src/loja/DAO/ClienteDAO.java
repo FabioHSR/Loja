@@ -17,7 +17,7 @@ public class ClienteDAO extends BaseDAO {
     protected void criaObjeto(String[] objectArray) {
 
         Cliente c = new Cliente(objectArray[0]);
-        c.incluiCliente();
+        c.incluiClienteSemAtualizarTXT();
     }
     
     public void writeFile(List<String>dados){

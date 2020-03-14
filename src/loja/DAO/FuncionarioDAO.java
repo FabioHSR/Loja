@@ -21,11 +21,11 @@ public class FuncionarioDAO extends BaseDAO{
         if(objectArray[3].equals("VENDEDOR"))
         {
             f = new Vendedor(objectArray[0], objectArray[1], objectArray[2]);
-            f.addFuncLista();
+            f.addFuncListaSemAtualizarTXT();
         }
         else{
             f = new Gerente(objectArray[0], objectArray[1], objectArray[2]);
-            f.addFuncLista();
+            f.addFuncListaSemAtualizarTXT();
         }
     }
 

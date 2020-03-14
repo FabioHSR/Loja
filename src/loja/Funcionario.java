@@ -189,6 +189,10 @@ public abstract class Funcionario {
         System.out.println(funcionariosStr);
     }
 
+	public void addFuncListaSemAtualizarTXT() {
+        getFuncionarios().add(this);
+	}
+
 
 
 }

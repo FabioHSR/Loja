@@ -18,7 +18,7 @@ public class ProdutoDAO extends BaseDAO {
     protected void criaObjeto(String[] objectArray) {
         if (Menus.isParsableDouble(objectArray[1])) {
             Produto p = new Produto(objectArray[0], Double.parseDouble(objectArray[1]));
-            p.incluiProduto();
+            p.incluiProdutoSemAtualizarTXT();
         }
     }
     public void writeFile(List<String>dados){

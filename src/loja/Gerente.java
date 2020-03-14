@@ -13,8 +13,5 @@ public class Gerente extends Funcionario implements ICadastraFuncionario {
     
     public Gerente(String nome, String usuario, String senha) {
         super(nome, usuario, senha,Cargo.GERENTE);
-    }
-    
-
-    
+    }        
 }

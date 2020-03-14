@@ -45,8 +45,10 @@ public class Pedido {
         sPedido += "\n----------------";
         sPedido += "\nTotal: " + total;
 
-        PedidoDAO.writeFile("/Pedidos/nPedido.txt", sPedido);
-        
+        PedidoDAO.writeFile("/Pedidos/nPedido.txt", Integer.toString(nPedido));
+        PedidoDAO DAO = new PedidoDAO();
+        DAO.writeFile(sPedido);
+
         return sPedido;
     }
 
@@ -139,6 +141,7 @@ public class Pedido {
                 return;
         } while (escolha.equals("1"));
         pedidos.add(pedido);
+        nPedido++;
         System.out.println("Deseja imprimir o pedido?\n1)Sim\n2)Não");
         escolha = s.nextLine();
         while (!escolha.matches("[1-2]")) {
@@ -147,7 +150,9 @@ public class Pedido {
             escolha = s.nextLine();
         }
         if (escolha.equals("1"))
+        {
             System.out.println(pedido.imprimePedido());
+        }
     }
 
     private void atualizaPedido(Produto produtoPedido, int quantidade) {

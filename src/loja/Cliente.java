@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import loja.DAO.ClienteDAO;
+
 public class Cliente {
 
     protected String nome;
@@ -16,8 +18,25 @@ public class Cliente {
 
     public void incluiCliente() {
         clientes.add(this);
+        atualizaTXT();
     }
 
+    private void atualizaTXT() {
+        ClienteDAO DAO = new ClienteDAO();
+        DAO.writeFile(clientesToCSV());
+    }
+    
+    public static List<String> clientesToCSV() {
+        List<String> clientesCSV = new ArrayList<String>();
+        int qtd = clientes.size();
+        if (qtd > 0) {
+            for (int n = 0; n < clientes.size(); n++) {
+                String linha = String.format("%s", clientes.get(n).nome);
+                clientesCSV.add(linha);
+            }
+        }
+        return clientesCSV;
+    }
     public static void alteraCliente() {
         if(clientes.size()!=0)
         {
@@ -76,4 +95,8 @@ public class Cliente {
             Cliente c = new Cliente(nome);
             return c;        
     }
+
+	public void incluiClienteSemAtualizarTXT() {
+        clientes.add(this);
+	}
 }

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import loja.DAO.ProdutoDAO;
+
 /**
  *
  * @author 082170007
@@ -40,6 +42,23 @@ public class Produto {
     public void incluiProduto() {
         produtos.add(this);
         tamanho = produtos.size();
+        atualizaTXT();
+    }
+    private void atualizaTXT() {
+        ProdutoDAO DAO = new ProdutoDAO();
+        DAO.writeFile(produtosToCSV());
+    }
+    
+    public static List<String> produtosToCSV() {
+        List<String> produtosCSV = new ArrayList<String>();
+        int qtd = produtos.size();
+        if (qtd > 0) {
+            for (int n = 0; n < produtos.size(); n++) {
+                String linha = String.format("%s;%f", produtos.get(n).descricao,produtos.get(n).preço);
+                produtosCSV.add(linha);
+            }
+        }
+        return produtosCSV;
     }
 
     public static void alteraProduto() {
@@ -111,4 +130,9 @@ public class Produto {
             return null;
         }
     }
+
+	public void incluiProdutoSemAtualizarTXT() {
+        produtos.add(this);
+        tamanho = produtos.size();
+	}
 }
