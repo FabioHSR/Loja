@@ -2,3 +2,4 @@ Produto1;11,300000
 Produto2;21,200000
 Produto3;31,400000
 Produto4;41,100000
+Teste;23,400000

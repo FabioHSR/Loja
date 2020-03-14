@@ -1,9 +1,2 @@
-Fábio Rocha;fabio;ok;GERENTE
-vendedor;vendedor;ok;VENDEDOR
-gerente;gerente;nok;GERENTE
-vendedor;vendedor;ok;VENDEDOR
-gerente;gerente;nok;GERENTE
-vendedor;vendedor;ok;VENDEDOR
-gerente;gerente;nok;GERENTE
-vendedor;vendedor;ok;VENDEDOR
-gerente;gerente;nok;GERENTE
+Administrador;admin;admin;GERENTE
+Teste;admin2;admin;VENDEDOR

@@ -16,8 +16,8 @@ public class ProdutoDAO extends BaseDAO {
 
     @Override
     protected void criaObjeto(String[] objectArray) {
-        if (Menus.isParsableDouble(objectArray[1])) {
-            Produto p = new Produto(objectArray[0], Double.parseDouble(objectArray[1]));
+        if (Menus.isParsableDouble(objectArray[1].replace(",", "."))) {
+            Produto p = new Produto(objectArray[0], Double.parseDouble(objectArray[1].replace(",", ".")));
             p.incluiProdutoSemAtualizarTXT();
         }
     }

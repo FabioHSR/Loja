@@ -59,7 +59,7 @@ public class Pedido {
         this.itensPedido.add(itemPedido);
     }
 
-    public void contaPedido() {
+    public static void contaPedido() {
         nPedido++;
     }
 
@@ -141,7 +141,6 @@ public class Pedido {
                 return;
         } while (escolha.equals("1"));
         pedidos.add(pedido);
-        nPedido++;
         System.out.println("Deseja imprimir o pedido?\n1)Sim\n2)Não");
         escolha = s.nextLine();
         while (!escolha.matches("[1-2]")) {
@@ -153,6 +152,8 @@ public class Pedido {
         {
             System.out.println(pedido.imprimePedido());
         }
+        contaPedido();
+        
     }
 
     private void atualizaPedido(Produto produtoPedido, int quantidade) {
