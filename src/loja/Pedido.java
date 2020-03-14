@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import loja.DAO.PedidoDAO;
+
 /**
  *
  * @author 082170007
@@ -42,6 +44,9 @@ public class Pedido {
         }
         sPedido += "\n----------------";
         sPedido += "\nTotal: " + total;
+
+        PedidoDAO.writeFile("/Pedidos/nPedido.txt", sPedido);
+        
         return sPedido;
     }
 
@@ -56,6 +61,12 @@ public class Pedido {
         nPedido++;
     }
 
+    public static int getnPedido(){
+        return nPedido;
+    }
+    public static void setnPedido(int parseInt) {
+        nPedido = parseInt;
+	}
     public static void novoPedido() {
         if (Produto.tamanho == 0) {
             System.out.println("Sem produtos cadastrados.");
@@ -153,5 +164,7 @@ public class Pedido {
         }
         return false;
     }
+
+
 
 }

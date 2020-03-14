@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import loja.DAO.FuncionarioDAO;
+
 /**
  *
  * @author 082170007
@@ -78,6 +80,25 @@ public abstract class Funcionario {
 
     public void addFuncLista() {
         getFuncionarios().add(this);
+        atualizaTXT();
+    }
+
+    private void atualizaTXT() {
+        FuncionarioDAO DAO = new FuncionarioDAO();
+        DAO.writeFile(funcionariosToCSV());
+    }
+    
+    public static List<String> funcionariosToCSV() {
+        List<String> funcionariosCSV = new ArrayList<String>();
+        int qtd = funcionarios.size();
+        if (qtd > 0) {
+            for (int n = 0; n < funcionarios.size(); n++) {
+                String linha = String.format("%s;%s;%s;%s", funcionarios.get(n).nome, funcionarios.get(n).usuario,
+                        funcionarios.get(n).senha, funcionarios.get(n).cargo);
+                funcionariosCSV.add(linha);
+            }
+        }
+        return funcionariosCSV;
     }
 
     public static void cadastraFuncionario(Funcionario usuarioLogado) {
@@ -126,7 +147,7 @@ public abstract class Funcionario {
                     System.out.println("Operação cancelada.");
                     return;
                 }
-                int cargoIndex = Integer.parseInt(cargo);
+                int cargoIndex = Integer.parseInt(cargo)-1;
                 Funcionario f;
                 if (Cargo.values()[cargoIndex] == Cargo.GERENTE) //generalizar se der tempo
                     f = new Gerente(nome, usuario, senha);
@@ -168,16 +189,6 @@ public abstract class Funcionario {
         System.out.println(funcionariosStr);
     }
 
-    public static void funcionariosToCSV() {
-        String funcionariosCSV = "";
-        int qtd = funcionarios.size();
-        if (qtd > 0) {
-            for (int n = 0; n < funcionarios.size(); n++) {
-                funcionariosCSV += String.format("%s;%s;%s;%s", funcionarios.get(n).nome, funcionarios.get(n).usuario,
-                        funcionarios.get(n).senha, funcionarios.get(n).cargo);
-            }
-        } else
-            funcionariosCSV = "Sem funcionarios cadastrados";
-    }
+
 
 }

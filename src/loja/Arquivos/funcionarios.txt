@@ -1,0 +1,2 @@
+Fabio Rocha;fabio;senha;GERENTE
+Marcio Rocha;marcio;senha;VENDEDOR
