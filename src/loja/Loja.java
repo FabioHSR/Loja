@@ -5,6 +5,7 @@
  */
 package loja;
 
+import loja.Biblioteca.Menus;
 import java.nio.file.FileAlreadyExistsException;
 
 import jdk.nashorn.internal.runtime.regexp.joni.Regex;

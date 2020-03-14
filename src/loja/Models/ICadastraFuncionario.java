@@ -1,7 +1,7 @@
 
 
 
-package loja;
+package loja.Models;
 
 public interface ICadastraFuncionario{
 

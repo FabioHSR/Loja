@@ -2,8 +2,9 @@ package loja.DAO;
 
 import java.util.List;
 
-import loja.Menus;
-import loja.Produto;
+import loja.Biblioteca.Menus;
+import loja.Biblioteca.Metodos;
+import loja.Models.Produto;
 
 public class ProdutoDAO extends BaseDAO {
 
@@ -16,7 +17,7 @@ public class ProdutoDAO extends BaseDAO {
 
     @Override
     protected void criaObjeto(String[] objectArray) {
-        if (Menus.isParsableDouble(objectArray[1].replace(",", "."))) {
+        if (Metodos.isParsableDouble(objectArray[1].replace(",", "."))) {
             Produto p = new Produto(objectArray[0], Double.parseDouble(objectArray[1].replace(",", ".")));
             p.incluiProdutoSemAtualizarTXT();
         }

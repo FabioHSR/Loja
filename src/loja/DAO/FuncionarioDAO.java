@@ -2,9 +2,9 @@ package loja.DAO;
 
 import java.util.List;
 
-import loja.Funcionario;
-import loja.Gerente;
-import loja.Vendedor;
+import loja.Models.Funcionario;
+import loja.Models.Gerente;
+import loja.Models.Vendedor;
 
 public class FuncionarioDAO extends BaseDAO{
 

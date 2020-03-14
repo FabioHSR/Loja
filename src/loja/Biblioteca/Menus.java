@@ -1,27 +1,14 @@
-package loja;
+package loja.Biblioteca;
 
+import loja.Biblioteca.Login;
+import loja.Models.Cliente;
+import loja.Models.Funcionario;
+import loja.Models.Produto;
+import loja.Models.Pedido;
 import java.text.ParseException;
 import java.util.Scanner;
 
 public class Menus {
-
-    public static boolean isParsableDouble(String input) {
-        try {
-            Double.parseDouble(input);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    public static boolean isParsableInt(String input) {
-        try {
-            Integer.parseInt(input);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
 
     public static void loginMenu() {
         Scanner s = new Scanner(System.in);

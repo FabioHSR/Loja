@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package loja;
+package loja.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -179,7 +179,7 @@ public abstract class Funcionario {
         return funcionarios;
     }
 
-    static void listaFuncionarios() {
+    public static void listaFuncionarios() {
         String funcionariosStr = "";
         int qtd = funcionarios.size();
         if (qtd > 0) {

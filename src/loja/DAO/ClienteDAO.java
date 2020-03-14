@@ -2,7 +2,7 @@ package loja.DAO;
 
 import java.util.List;
 
-import loja.Cliente;
+import loja.Models.Cliente;
 
 public class ClienteDAO extends BaseDAO {
 

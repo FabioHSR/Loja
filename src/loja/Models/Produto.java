@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package loja;
+package loja.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 import loja.DAO.LogDAO;
 import loja.DAO.ProdutoDAO;
+import loja.Biblioteca.Menus;
+import loja.Biblioteca.Metodos;
 
 /**
  *
@@ -121,7 +123,7 @@ public class Produto {
         }
         System.out.println("Digite o preço ou 0 para cancelar.");
         String preço = s.nextLine();
-        while (!Menus.isParsableDouble(preço) && preço != "0") {
+        while (!Metodos.isParsableDouble(preço) && preço != "0") {
             System.out.println("Por favor, digite um valor válido ou 0 para cancelar.");
             preço = s.nextLine();
         }

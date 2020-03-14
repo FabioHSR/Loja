@@ -7,8 +7,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import loja.Loja;
-import loja.Menus;
-import loja.Pedido;
+import loja.Biblioteca.Menus;
+import loja.Biblioteca.Metodos;
+import loja.Models.Pedido;
 
 public class PedidoDAO {
 
@@ -21,7 +22,7 @@ public class PedidoDAO {
                   String linha;
         
                   while((linha = br.readLine()) != null) {     
-                      if(Menus.isParsableInt(linha))           
+                      if(Metodos.isParsableInt(linha))           
                     Pedido.setnPedido(Integer.parseInt(linha));
                   }                  
                 }

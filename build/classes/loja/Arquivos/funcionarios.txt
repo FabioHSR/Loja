@@ -1,2 +1,3 @@
 Administrador;admin;admin;GERENTE
 Teste;admin2;admin;VENDEDOR
+Nome;asd;asdf;VENDEDOR

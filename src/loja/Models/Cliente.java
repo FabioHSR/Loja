@@ -1,4 +1,4 @@
-package loja;
+package loja.Models;
 
 import java.util.ArrayList;
 import java.util.List;
