@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import loja.DAO.ClienteDAO;
+import loja.DAO.LogDAO;
+import sun.rmi.runtime.Log;
 
 public class Cliente {
 
@@ -52,8 +54,10 @@ public class Cliente {
             Cliente p = inputCliente();
             if (p != null) {
                 clientes.set(Integer.parseInt(escolha)-1, p);
-                System.out.println("Cliente alterado com sucesso.");
+                System.out.println("Cliente alterado com sucesso.");                
                 atualizaTXT();
+                LogDAO.writeFile("Cliente alterado");
+                
             }
         }
         else{
@@ -82,6 +86,7 @@ public class Cliente {
         if (c != null) {
             c.incluiCliente();
             System.out.println("Cadastro realizado.");
+            LogDAO.writeFile("Cliente cadastrado");
         }
     }
 

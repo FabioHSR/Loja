@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import loja.DAO.LogDAO;
 import loja.DAO.PedidoDAO;
 
 /**
@@ -153,7 +154,7 @@ public class Pedido {
             System.out.println(pedido.imprimePedido());
         }
         contaPedido();
-        
+        LogDAO.writeFile("Pedido cadastrado");
     }
 
     private void atualizaPedido(Produto produtoPedido, int quantidade) {

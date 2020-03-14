@@ -1,0 +1,7 @@
+2020.03.14 d.C. at 02:01:12 BRT - Produto cadastrado
+2020.03.14 d.C. at 02:01:24 BRT - Produto alterado
+2020.03.14 d.C. at 02:01:33 BRT - Cliente cadastrado
+2020.03.14 d.C. at 02:01:38 BRT - Cliente alterado
+2020.03.14 d.C. at 02:01:47 BRT - Pedido cadastrado
+2020.03.14 d.C. at 02:02:03 BRT - Funcionario cadastrado
+2020.03.14 d.C. at 02:03:51 BRT - Cliente alterado

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import loja.DAO.LogDAO;
 import loja.DAO.ProdutoDAO;
 
 /**
@@ -77,6 +78,7 @@ public class Produto {
                 produtos.set(Integer.parseInt(escolha) - 1, p);
                 System.out.println("Produto alterado com sucesso.");
                 atualizaTXT();
+                LogDAO.writeFile("Produto alterado");
             }
         } else {
             System.out.println("Sem produtos para cadastrados.");
@@ -105,6 +107,7 @@ public class Produto {
         if (p != null) {
             p.incluiProduto();
             System.out.println("Cadastro realizado.");
+            LogDAO.writeFile("Produto cadastrado");
         }
     }
 

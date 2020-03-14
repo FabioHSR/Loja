@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import loja.DAO.FuncionarioDAO;
+import loja.DAO.LogDAO;
 
 /**
  *
@@ -155,6 +156,7 @@ public abstract class Funcionario {
                     f = new Vendedor(nome, usuario, senha);
                 f.addFuncLista();
                 System.out.println("Operação realizada com sucesso.");
+                LogDAO.writeFile("Funcionario cadastrado");
             }
         } else {
             System.out.println("Usuário não autorizado a realizar cadastro de funcionarios");
